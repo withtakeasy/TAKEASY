@@ -188,7 +188,8 @@ img{
 h3{
     border-bottom: 1px solid #f0f0f0;
     text-align: center;
-    padding:5px 5px
+    padding:5px 5px;
+    margin-bottom : 30px; 
 }
 .description p{
     padding: 10px;
