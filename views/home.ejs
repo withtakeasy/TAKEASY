@@ -1,0 +1,43 @@
+<% include ./header.ejs %>
+<div id="main">
+    <div id="masonry_container">
+        <% products.forEach(function(product){ %>
+        <div class="masonry-grid" >
+            <a href="/products/<%=product.id%>">
+                    <img src="/uploads/<%=product.thumbnail%>">
+                    <p style="text-align: right;">
+                            ...
+                    </p>
+            </a>
+        </div>
+        <%});%>
+        <% endProducts.forEach(function(product){ %>
+            <div class="masonry-grid" >
+                <a href="/products/<%=product.id%>">
+                    <div class="imgs"><img  src="/uploads/<%=product.thumbnail%>"></div>
+                    <p style="text-align: right;">
+                            ...
+                    </p>
+                </a>
+            </div>
+        <%});%>
+    </div>
+	<link rel="stylesheet" href="/public/css/style.css">
+    <style type="text/css">
+
+
+</style>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+<script type="text/javascript">
+    let $masonry_container = $('#masonry_container');
+    $masonry_container.imagesLoaded(function(){
+      $masonry_container.masonry({
+        itemSelector : '.masonry-grid',
+        columnWidth : value = screen.width > 600 ? 220 : 158,
+        isFitWidth:true
+      });
+    });
+
+</script>
+<% include ./footer.ejs %>

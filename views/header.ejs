@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TAKEASY</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!--폰트어섬추가 -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <!--bootstrap js 추가 -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--common js 추가 -->
+    <script type="text/javascript" src="/static/common.js"></script>
+    <script type="text/javascript" src="/public/css/style.css"></script>
+    <script>
+        function openSlideMenu(){
+            document.getElementById('side-menu').style.width = '250px';
+            document.getElementById('main').style.marginLeft = '250px';
+            document.getElementById('main').style.marginLeft = '250px';
+        }
+        function closeSlideMenu(){
+            document.getElementById('side-menu').style.width = '0';
+            document.getElementById('main').style.marginLeft = '0';
+        }
+    </script>
+	<link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+        <nav class="navbar">
+            <span class="open-slide">
+                <a href="#" onclick="openSlideMenu()">
+                    <svg width="25" height="30">
+                        <path d="M0,8 30,8" stroke="#fff" stroke-width="2"/>
+                        <path d="M0,14 30,14" stroke="#fff" stroke-width="2"/>
+                        <path d="M0,20 30,20" stroke="#fff" stroke-width="2"/>
+                    </svg>
+                </a>
+            </span>
+
+            <div class="search-container">
+                <form action="/action_page.php">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        <!-- <ul class="navbar-nav">
+            <li><a href="/">HOME</a></li>
+            <li><a href="/NEW">NEW</a></li>
+            <li><a href="/EVENT">EVENT</a></li>
+            <li><a href="/SALE">SALE</a></li>
+            <li><a href="/admin/products/write">REGISTER</a></li>
+        </ul> -->
+    </nav>
+    <div id="side-menu" class="side-nav">
+            <a href="#" class="btn-close" onclick="closeSlideMenu()">
+                <svg width="25" height="30">
+                    <path d="M0,8 30,8" stroke="#fff" stroke-width="2"/>
+                    <path d="M0,14 30,14" stroke="#fff" stroke-width="2"/>
+                    <path d="M0,20 30,20" stroke="#fff" stroke-width="2"/>
+                </svg>
+            </a>
+            <a href="/"><i class="fas fa-home"></i>&nbsp;&nbsp;&nbsp;HOME</a>
+            <a href="/NEW"><i class="fas fa-grin-stars"></i>&nbsp;&nbsp;&nbsp;NEW</a>
+            <a href="/EVENT"><i class="fas fa-bullhorn"></i>&nbsp;&nbsp;&nbsp;EVENT</a>
+            <a href="/SALE"><i class="fas fa-sort-amount-down"></i>&nbsp;&nbsp;&nbsp;SALE</a>
+            <a href="/admin/products/write"><i class="fas fa-pen-alt"></i>&nbsp;&nbsp;&nbsp;REGISTER</a>
+    </div>
