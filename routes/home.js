@@ -25,7 +25,7 @@ router.get('/', function(req,res){
     });
 });
 
-router.get('/:category', async function(req,res){
+router.get('/:category', function(req,res){
     
     let newItems = [], lastItems = [];
 
