@@ -3,7 +3,7 @@ const router = express.Router();
 const ProductsModel = require('../models/ProductsModel');
 const shuffle = require('../libs/shuffle')
 /* GET home page. */
-router.get('/', async function(req,res){
+router.get('/', function(req,res){
 
     let newItems = [], lastItems = [];
 
