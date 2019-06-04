@@ -12,6 +12,9 @@ var ProductsSchema = new Schema({
     url : String, //url
     description : String, //설명
     category : String,// 카테고리 구분
+    startDate : {
+        type : Date
+    },
     endDate : {
         type : Date
     },
@@ -27,16 +30,23 @@ var ProductsSchema = new Schema({
 //set은 변수의 값을 바꾸거나 셋팅하면 호출
 // get은 getDate변수를 호출하는 순간 날짜 월일이 찍힌다.
 ProductsSchema.virtual('getDate').get(function(){
-    var date = new Date(this.created_at);
+    let date = new Date(this.created_at);
     return {
         year : date.getFullYear(),
         month : date.getMonth()+1,
         day : date.getDate()
     };
 });
-
+ProductsSchema.virtual('getStartDate').get(function(){
+    let date = new Date(this.startDate);
+    return {
+        year : date.getFullYear(),
+        month : date.getMonth()+1,
+        day : date.getDate()
+    };
+});
 ProductsSchema.virtual('getEndDate').get(function(){
-    var date = new Date(this.endDate);
+    let date = new Date(this.endDate);
     return {
         year : date.getFullYear(),
         month : date.getMonth()+1,

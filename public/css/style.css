@@ -3,10 +3,14 @@
 body{
     margin:0;
     padding:0;
-    background-color:#f4f4f4;
     overflow-x: hidden;
+    overflow-y: scroll;
 }
-
+.detailBody{
+    background-color:  rgb(238, 238, 238);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
 .masonry-grid img {
     margin:0 auto; 
     max-width: 170px;
@@ -15,16 +19,16 @@ body{
 }
 
 .navbar{
-    background-color:#3b5998;
+    background-color:#fff;
     overflow: hidden;
-    height:56px;
+    height:64px;
     margin-bottom: 0;
 }
 
 .navbar a{
     float: left;
     display: block;
-    color:#f2f2f2;
+    color:#000;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -43,7 +47,7 @@ body{
     z-index:100;
     top:0;
     left: 0;
-    background-color:#111;
+    background-color:#dfdfdf;
     /* opacity: 0.9; */
     overflow-x: hidden;
     padding-top: 100px;
@@ -54,7 +58,7 @@ body{
     padding: 12px 12px 12px;
     text-decoration: none;
     font-size: 12px;
-    color:#ccc;
+    color:#000;
     display: block;
     transition: 0.3s;
 }
@@ -73,37 +77,32 @@ body{
 
 /* search bar */
 
-.search-container {
-    float: right;
-}
+
 
 .navbar input[type=text] {
-  border-radius: 6px 0 0 6px;  
-  width : 360px;
+  border-radius: 7px 0 0 7px;  
+  width : 65%;
   padding: 6px;
   margin-top: 8px;
+  margin-left: 10px;
   font-size: 17px;
-  border: none;
+  background: rgb(238, 238, 238);
+  border: 1px solid rgb(238, 238, 238);;
 }
 
 .navbar .search-container button {
-    border-radius: 0 6px 6px 0;  
-    float: right;
+    border-radius: 0 7px 7px 0;  
     padding: 6px 10px;
-    margin-top: 8px;
-    margin-right: 16px;
-    background: #ddd;
+    margin-top: 12px;
+    background:rgb(238, 238, 238);
     font-size: 17px;
-    border: none;
+    border: 1px solid rgb(238, 238, 238);;
     cursor: pointer;
 }
-.navbar .search-container button:hover {
-    background: #ccc;
-  }
 
 #main{
     transition: margin-left 0.5s;
-    padding: 20px;
+    padding: 0px;
     overflow: hidden;
     width:100%;
 }
@@ -117,39 +116,29 @@ body{
     margin:0 auto;
 }
 .masonry-grid{
-    margin:0 auto;
+    margin:20px 0px 20px 9px;
 }
 .masonry-grid img { 
     margin:0 auto;
-    max-width: 190px;
-    border-radius: 7px; 
+    max-width: 236px;
+    border-radius: 8px; 
     /* box-sizing: border-box; */
-}
-.masonry-grid img:hover{
-    opacity: 0.9;
-    -ms-transform: scale(1.1); /* IE 9 */
-    -webkit-transform: scale(1.1); /* Safari 3-8 */
-    transform: scale(1.1); 
-}
-
-.imgs:hover{
-    -ms-transform: scale(1.1); /* IE 9 */
-    -webkit-transform: scale(1.1); /* Safari 3-8 */
-    transform: scale(1.1); 
 }
 
 /*
 * 상세 페이지
 */
+
 .card{
     margin:30px auto;
 }
 
 .content{
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px;
     box-shadow: 3px 3px 3px 3px #eaeaea;
     background-color:#fff;
+    margin-bottom: 30px;
 }
 img{
     margin:50px 5px 20px;
@@ -209,11 +198,11 @@ table th{
 }
 
 
-@media(max-width:600px){
+@media(max-width:575.98px){
     .navbar-nav{display: none;}
     .masonry-grid img { 
         margin:0 auto;
-        max-width: 148px;
+        max-width: 152px;
         border-radius: 7px; 
         /* box-sizing: border-box; */
     }

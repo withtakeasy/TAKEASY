@@ -49,6 +49,7 @@ router.post('/products/write' , upload.single('thumbnail'), csrfProtection, func
         thumbnail : (req.file) ? req.file.filename : "",
         url : req.body.url,
         category : req.body.category,
+        startDate : req.body.startDate,
         endDate : req.body.endDate,
         description : req.body.description,
         // username : req.user.username
@@ -97,6 +98,7 @@ router.post('/products/edit/:id', upload.single('thumbnail'), csrfProtection, fu
             name : req.body.name,
             thumbnail : (req.file) ? req.file.filename : product.thumbnail,
             url : req.body.url,
+            startDate : req.body.startDate,
             endDate : req.body.endDate,
             category : req.body.category,
             description : req.body.description,

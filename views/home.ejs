@@ -1,43 +1,51 @@
 <% include ./header.ejs %>
-<div id="main">
-    <div id="masonry_container">
-        <% products.forEach(function(product){ %>
-        <div class="masonry-grid" >
-            <a href="/products/<%=product.id%>">
-                    <img src="/uploads/<%=product.thumbnail%>">
-                    <p style="text-align: right;">
-                            ...
-                    </p>
-            </a>
-        </div>
-        <%});%>
-        <% endProducts.forEach(function(product){ %>
+<body onload="showLoading()" style="margin:0;">
+    <div id="loader_container">
+        <h4>쿠폰 정보를 불러오고 있습니다.</h4>
+        <div id="loader"></div>
+    </div>
+
+    <div id="main" style="display:none;">
+        <div id="masonry_container" >
+            <% products.forEach(function(product){ %>
             <div class="masonry-grid" >
                 <a href="/products/<%=product.id%>">
-                    <div class="imgs"><img  src="/uploads/<%=product.thumbnail%>"></div>
-                    <p style="text-align: right;">
-                            ...
-                    </p>
+                    <img src="/uploads/<%=product.thumbnail%>">
                 </a>
             </div>
-        <%});%>
-    </div>
-	<link rel="stylesheet" href="/public/css/style.css">
-    <style type="text/css">
-
-
-</style>
+            <%});%>
+            <% endProducts.forEach(function(product){ %>
+                <div class="masonry-grid" >
+                    <a href="/products/<%=product.id%>">
+                        <div class="imgs"><img  src="/uploads/<%=product.thumbnail%>"></div>
+                    </a>
+                </div>
+            <%});%>
+        </div>
+<link rel="stylesheet" href="/public/css/style.css">
+<link rel="stylesheet" href="/public/css/loader.css">
+    
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
 <script type="text/javascript">
-    let $masonry_container = $('#masonry_container');
-    $masonry_container.imagesLoaded(function(){
-      $masonry_container.masonry({
-        itemSelector : '.masonry-grid',
-        columnWidth : value = screen.width > 600 ? 220 : 158,
-        isFitWidth:true
-      });
-    });
 
+let $masonry_container = $('#masonry_container')
+
+function showLoading() {
+    setTimeout(showPage,
+        $masonry_container.imagesLoaded(function(){
+            $masonry_container.masonry({
+                itemSelector : '.masonry-grid',
+                columnWidth : value = screen.width > 575.98 ? 260 : 170,
+                isFitWidth:true
+            });
+        })
+    );
+}
+    
+function showPage() {
+  document.getElementById("loader_container").style.display = "none";
+  document.getElementById("main").style.display = "block";
+}
 </script>
 <% include ./footer.ejs %>
