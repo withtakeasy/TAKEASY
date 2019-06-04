@@ -116,7 +116,7 @@ body{
     margin:0 auto;
 }
 .masonry-grid{
-    margin:20px 0px 20px 9px;
+    margin:20px 0px 20px 5px;
 }
 .masonry-grid img { 
     margin:0 auto;
@@ -202,7 +202,7 @@ table th{
     .navbar-nav{display: none;}
     .masonry-grid img { 
         margin:0 auto;
-        max-width: 152px;
+        max-width: 165px;
         border-radius: 7px; 
         /* box-sizing: border-box; */
     }
