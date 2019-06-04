@@ -202,7 +202,7 @@ table th{
     .navbar-nav{display: none;}
     .masonry-grid img { 
         margin:0 auto;
-        max-width: 165px;
+        max-width: 170px;
         border-radius: 7px; 
         /* box-sizing: border-box; */
     }
