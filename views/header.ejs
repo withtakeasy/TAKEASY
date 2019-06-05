@@ -22,7 +22,14 @@
         }
         function closeSlideMenu(){
             document.getElementById('side-menu').style.width = '0';
-            document.getElementById('main').style.marginLeft = '0';
+        }
+        function check(){
+            if(document.search.keyWord.value==''){
+                alert('검색어를 입력하세요'); 
+                document.search.keyWord.focus();
+                return false; 
+            }
+
         }
     </script>
 	<link rel="stylesheet" href="/public/css/style.css">
@@ -39,7 +46,7 @@
         </span>
 
         <div class="search-container">
-            <form action="/action">
+            <form action="/" method="post" id="search" onsubmit="check()">
                 <input type="text" name="search"><button type="submit"><i class="fa fa-search"></i></button></input>
             </form>
         </div>
@@ -60,8 +67,8 @@
             </svg>
         </a>
         <a href="/">HOME</a>
-        <a href="/NEW">NEW</a>
-        <a href="/EVENT">EVENT</a>
-        <a href="/SALE">SALE</a>
+        <a href="/category/NEW">NEW</a>
+        <a href="/category/EVENT">EVENT</a>
+        <a href="/category/SALE">SALE</a>
         <a href="/admin/products/write">REGISTER</a>
     </div>

@@ -32,7 +32,7 @@
 let $masonry_container = $('#masonry_container')
 
 function showLoading() {
-    setTimeout(showPage,
+    let timer = setTimeout(showPage,
         $masonry_container.imagesLoaded(function(){
             $masonry_container.masonry({
                 itemSelector : '.masonry-grid',
