@@ -67,14 +67,12 @@ router.post('/products/write' , upload.single('thumbnail'), csrfProtection, func
 router.get('/products/detail/:id' , function(req, res){
     var getData = co(function* (){
         var product = yield ProductsModel.findOne( { 'id' :  req.params.id }).exec();
-        var comments = yield CommentsModel.find( { 'product_id' :  req.params.id }).exec();
         return {
             product : product,
-            comments : comments
         };
     });
     getData.then( function(result){
-        res.render('admin/productsDetail', { product: result.product , comments : result.comments });
+        res.render('admin/productsDetail', { product: result.product });
     });
 });
 
@@ -106,7 +104,7 @@ router.post('/products/edit/:id', upload.single('thumbnail'), csrfProtection, fu
 
         //update의 첫번째 인자는 조건, 두번째 인자는 바뀔 값들
         ProductsModel.update({ id : req.params.id }, { $set : query }, function(err){
-            res.redirect('/admin/products/detail/' + req.params.id ); //수정후 본래보던 상세페이지로 이동
+            res.redirect('/admin/products');
         });
     });
 });
